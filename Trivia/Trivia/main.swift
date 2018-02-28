@@ -839,10 +839,11 @@ print(result)
 // ----------------------------------------------------------------------------------------------------------------------
 // --------------------------------------------------- FORCA ------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------
-
+/*
 print("Jogador 1, digite a palavra: ")
 if let palavra = readLine() {
-    let partes = ["Cabeca", "Perna direita", "Perna esquerda", "Braco direito", "Braco esquerdo"]
+//    let partes = ["Cabeca", "Braco esquerdo", "Braco direito", "Perna direita", "Perna esquerda"]
+    let desenho = [" *\n/|\\\n |\n/ \\", " \n/|\\\n |\n/ \\",  " \n |\\\n |\n/ \\", " \n | \n |\n/ \\", " \n | \n | \n/  "]
     var palavraArr = Array(palavra)
     var strAtual : [Character] = Array(repeating: "_", count: palavra.count)
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
@@ -858,7 +859,8 @@ if let palavra = readLine() {
                     strAtual[index] = palpiteC
                 }
             } else {
-                print("Errou, otario! Voce acaba de perder x \(partes[chances]). Ainda tem \(chances) chances.")
+                print("\nErrou, otario! \n\(desenho[chances])\n")
+                
                 chances -= 1
             }
         }
@@ -871,6 +873,69 @@ if let palavra = readLine() {
     }
     
 }
+*/
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------ SOMA QUADRADOS ------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------
+/*
+let arr = Array(1...4)
+func sumpow(arr: [Int]) -> Int {
+    var sum = 0
+    for i in arr {
+        sum += i*i
+    }
+    return sum
+}
+
+print(sumpow(arr: arr))
+*/
+
+
+// ----------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------ ALUNOS E TAL ETC ----------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------
+/*
+struct Aluno {
+    var cpf : String
+    var nome : String
+    var disciplina : Disciplina
+}
+
+struct Disciplina {
+    var codigo : String
+    var nome : String
+    var semestre : Int
+}
+
+var dis = Disciplina(
+    codigo: "2",
+    nome: "Sehloiro",
+    semestre: 2
+)
+var x = Aluno(
+    cpf: "123456789",
+    nome: "Miniiiinu",
+    disciplina: dis
+)
+
+var alunos : [String:Aluno] = [:]
+func add(aluno: Aluno, alunos: [String:Aluno]) -> [String:Aluno]{
+    var result = alunos
+    if !Array(alunos.keys).contains(aluno.cpf) {
+        result[aluno.cpf] = aluno
+        return result
+    } else {
+        print("Aluno ja existente")
+    }
+    return alunos
+}
+
+print(add(aluno: x, alunos: alunos))
+*/
+
 
 
 
