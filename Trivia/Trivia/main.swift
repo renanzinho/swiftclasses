@@ -992,5 +992,140 @@ print(soma(m1: [[1,2],[3,4]], m2: [[2,3],[4,5]]))
 // ----------------------------------------------------------------------------------------------------------------------
 // ------------------------------------------- MULTIPLICAR MATRIZ -------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------
+/*
+func mult(m1: [[Int]], m2: [[Int]]) -> [[Int]] {
+    var result : [[Int]] = []
+    
+    for linha in 0..<m1.count {
+        var l : [Int] = []
+        for elemento in 0..<m1.count {
+            var sum = 0
+            for b in 0..<m1.count {
+                sum += m1[linha][b] * m2[b][elemento]
+            }
+            l.append(sum)
+        }
+        result.append(l)
+    }
+    
+    return result
+}
+
+print(mult(m1: [[2,3,4],[5,6,7],[8,9,0]], m2: [[0,0,1],[0,1,0],[1,0,0]]))
+*/
+
+
+// ----------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------- STRUCT RETANGULO ---------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------
+/*
+struct Ponto {
+    var x: Double
+    var y: Double
+    
+    init(x: Double, y: Double) {
+        self.x = x
+        self.y = y
+    }
+    
+    func distancia(p: Ponto) -> Double {
+        let diffX = self.x - p.x
+        let diffY = self.y - p.y
+        let sumSqr = diffX * diffX + diffY * diffY
+        return sqrt(sumSqr)
+    }
+    
+    func igual(p: Ponto) -> Bool {
+        return p.x == self.x && p.y == self.y
+    }
+}
+
+struct Retangulo {
+    var h: Double
+    var w: Double
+    var pc: Ponto
+    var area: Double {
+        get {
+            return h*w
+        }
+    }
+    
+    init(h: Double, w: Double, pc: Ponto) {
+        self.h = h
+        self.w = w
+        self.pc = pc
+    }
+    
+    func igual(r: Retangulo) -> Bool {
+        return pc.igual(p: r.pc) && self.h == r.h && self.w == r.w
+    }
+    
+    func dist(p: Ponto) -> Double {
+        let diffX = self.pc.x - p.x
+        let diffY = self.pc.y - p.y
+        let sumSqr = diffX * diffX + diffY * diffY
+        return sqrt(sumSqr)
+    }
+}
+*/
+
+
+// ----------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------- STRUCT RETANGULO ---------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------
+
+struct Pokemon {
+    var nome: String
+    var tipo: [String]
+    var fullHp: Int
+    var hp: Int {
+        get {
+            return self.hp
+        }
+        set(dano) {
+            self.hp -= dano
+        }
+    }
+    var ataques: [String:Int]
+    
+    init(nome: String, tipo: [String], fullHp: Int, ataques: [String:Int]) {
+        self.nome = nome
+        self.tipo = tipo
+        self.fullHp = fullHp
+        self.ataques = ataques
+        self.hp = fullHp
+    }
+    
+    func verifica(p: Pokemon) -> Bool {
+        for i in self.tipo {
+            if p.tipo.contains(i) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func ataca(p: Pokemon, ataque: String) -> Pokemon{
+        var result = p
+        if let dano = self.ataques[ataque]{
+            result.hp = dano
+            return result
+        } else {
+            return p
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 
