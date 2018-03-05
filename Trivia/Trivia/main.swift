@@ -1018,14 +1018,23 @@ print(mult(m1: [[2,3,4],[5,6,7],[8,9,0]], m2: [[0,0,1],[0,1,0],[1,0,0]]))
 // ----------------------------------------------------------------------------------------------------------------------
 // ------------------------------------------- STRUCT RETANGULO ---------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------
-/*
-struct Ponto {
+
+protocol Forma {
+    func igual(_ outra: Forma) -> Bool
+    func incluiPonto(_ ponto: Ponto) -> Bool
+}
+
+struct Ponto: Forma {
     var x: Double
     var y: Double
     
     init(x: Double, y: Double) {
         self.x = x
         self.y = y
+    }
+    
+    func incluiPonto(_ p: Ponto) -> Bool {
+        return self.igual(p)
     }
     
     func distancia(p: Ponto) -> Double {
@@ -1035,12 +1044,50 @@ struct Ponto {
         return sqrt(sumSqr)
     }
     
-    func igual(p: Ponto) -> Bool {
-        return p.x == self.x && p.y == self.y
+    func igual(_ p: Forma) -> Bool {
+        if p is Ponto {
+            let pto = p as! Ponto
+            return pto.x == self.x && pto.y == self.y
+        } else {
+            return false
+        }
     }
 }
 
-struct Retangulo {
+struct Circulo: Forma {
+    var r: Double
+    var pc: Ponto
+    var area: Double {
+        get {
+            return 3.14*(r*r)
+        }
+    }
+    
+    init(r: Double, pc: Ponto) {
+        self.r = r
+        self.pc = pc
+    }
+    
+    func incluiPonto(_ p: Ponto) -> Bool {
+        if self.pc.distancia(p: p) > raio {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func igual(_ c: Forma) -> Bool {
+        if c is Circulo {
+            let cir = c as! Circulo
+            return pc.igual(cir.pc) && self.r == cir.r
+        } else {
+            return false
+        }
+    }
+    
+}
+
+struct Retangulo: Forma {
     var h: Double
     var w: Double
     var pc: Ponto
@@ -1056,8 +1103,20 @@ struct Retangulo {
         self.pc = pc
     }
     
-    func igual(r: Retangulo) -> Bool {
-        return pc.igual(p: r.pc) && self.h == r.h && self.w == r.w
+    func igual(_ r: Forma) -> Bool {
+        if r is Retangulo {
+            let ret = r as! Retangulo
+            return pc.igual(ret.pc) && self.h == ret.h && self.w == ret.w
+        } else {
+            return false
+        }
+    }
+    
+    func incluiPonto(_ p: Ponto) -> Bool {
+        let rha = (self.pc.y - p.y) / (self.pc.x - p.x)
+        
+        
+        let rhb =
     }
     
     func dist(p: Ponto) -> Double {
@@ -1067,13 +1126,13 @@ struct Retangulo {
         return sqrt(sumSqr)
     }
 }
-*/
+
 
 
 // ----------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------- STRUCT RETANGULO ---------------------------------------------------------
+// ------------------------------------------- STRUCT POKEMON -----------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------
-
+/*
 struct Pokemon {
     var nome: String
     var tipo: [String]
@@ -1117,10 +1176,13 @@ struct Pokemon {
     }
     
 }
+*/
 
 
 
-
+// ----------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------- TRIVIA -------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------
 
 
 
