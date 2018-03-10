@@ -1018,11 +1018,12 @@ print(mult(m1: [[2,3,4],[5,6,7],[8,9,0]], m2: [[0,0,1],[0,1,0],[1,0,0]]))
 // ----------------------------------------------------------------------------------------------------------------------
 // ------------------------------------------- STRUCT RETANGULO ---------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------
-
+/*
 protocol Forma {
     func area() -> Double
     func igual(_ outra: Forma) -> Bool
     func incluiPonto(_ ponto: Ponto) -> Bool
+    mutating func mover(x: Double, y: Double)
 }
 
 struct Ponto: Forma {
@@ -1055,6 +1056,11 @@ struct Ponto: Forma {
     }
     
     func area() -> Double { return 0 }
+    
+    mutating func mover(x: Double, y: Double) {
+        self.x += x
+        self.y += y
+    }
 }
 
 struct Circulo: Forma {
@@ -1085,6 +1091,11 @@ struct Circulo: Forma {
     
     func area() -> Double { return 3.14 * (r * r) }
     
+    mutating func mover(x: Double, y: Double) {
+        self.pc.x += x
+        self.pc.y += y
+    }
+    
 }
 
 struct Retangulo: Forma {
@@ -1111,8 +1122,7 @@ struct Retangulo: Forma {
         }
     }
     
-    func incluiPonto(_ p: Ponto) -> Bool{
-        
+    func incluiPonto(_ p: Ponto) -> Bool {
         let pontos : [String : Ponto] = [
             "p1": Ponto(x: (pc.x - w/2), y: pc.y),
             "p3": Ponto(x: (pc.x + w/2), y: pc.y),
@@ -1120,125 +1130,13 @@ struct Retangulo: Forma {
             "p4": Ponto(x: pc.x, y: (pc.y - h/2))
         ]
         
-        let quinas : [String : Ponto] = [
-            "p1": Ponto(x: (pc.x - w/2), y: (pc.y + h/2)),
-            "p2": Ponto(x: (pc.x + w/2), y: (pc.y + h/2)),
-            "p3": Ponto(x: (pc.x + w/2), y: (pc.y - h/2)),
-            "p4": Ponto(x: (pc.x - w/2), y: (pc.y - h/2))
-        ]
-        
-        let eqs : [String : Double] = [
-            "eq1": pontos["p1"]!.x,     // x = ?
-            "eq3": pontos["p3"]!.x,     // x = ?
-            "eq2": pontos["p4"]!.y,     // y = b
-            "eq4": pontos["p2"]!.y       // y = b
-        ]
-        
-        
-        // OLHAR DPS PRA SO DEIXAR FAZER ESSA OPERACAO SE N TIVER NOS EIXOS
-        
-        // Get equation of given point and center
-        let eqPoint = eq(self.pc, p)
-        
-        var quadrante = ""
-        
-        if p.y > pc.y {         // If it's above pc
-            if p.x > pc.x {     // If it's to the right
-                quadrante = "q2"
-            } else {            // It's to the left
-                quadrante = "q1"
-            }
-        } else {                // It's below pc
-            if p.x > pc.x {     // It's to the right
-                quadrante = "q3"
-            } else {            // It's to the left
-                quadrante = "q4"
-            }
+        if p.x < pontos["p1"]!.x || p.x > pontos["p3"]!.x || p.y > pontos["p2"]!.y || p.y < pontos["p4"]!.y {
+            return false
+        } else {
+            return true
         }
-        
-        switch quadrante {
-        
-        case "q1":
-            if p.x < quinas["p1"]!.x && p.y < quinas["p1"]!.y {             // Esquerda e baixo
-                // Acha o ponto onde x eh igual a eq1
-                let y = eqPoint.a * eqs["eq1"]! + eqPoint.b
-                if p.y > y {
-                    return false
-                } else {
-                    return true
-                }
-            } else if p.x > quinas["p1"]!.x && p.y > quinas["p1"]!.y {      // Direita e cima
-                // Acha o ponto onde y eh igual a eq2
-                let x = (eqs["eq2"]! - eqPoint.b) / eqPoint.a
-                if p.x < x {
-                    return false
-                } else {
-                    return true
-                }
-            } else {                                                        // Diagonal
-                
-            }
-        case "q2":
-            if p.x > quinas["p2"]!.x && p.y < quinas["p2"]!.y {             // Direita e baixo
-                let y = eqPoint.a * eqs["eq3"]! + eqPoint.b
-                if p.y > y {
-                    return false
-                } else {
-                    return true
-                }
-            } else if p.x < quinas["p2"]!.x && p.y > quinas["p2"]!.y {      // Esquerda e cima
-                let x = (eqs["eq2"]! - eqPoint.b) / eqPoint.a
-                if p.x > x {
-                    return false
-                } else {
-                    return true
-                }
-            } else {                                                        // Diagonal
-                
-            }
-        case "q3":
-            if p.x > quinas["p3"]!.x && p.y > quinas["p3"]!.y {             // Direita e cima
-                let y = eqPoint.a * eqs["eq3"]! + eqPoint.b
-                if p.y < y {
-                    return false
-                } else {
-                    return true
-                }
-            } else if p.x < quinas["p3"]!.x && p.y < quinas["p3"]!.y {      // Esquerda e baixo
-                let x = (eqs["eq4"]! - eqPoint.b) / eqPoint.a
-                if p.x > x {
-                    return false
-                } else {
-                    return true
-                }
-            } else {                                                        // Diagonal
-                
-            }
-        case "q4":
-            if p.x > quinas["p4"]!.x && p.y < quinas["p4"]!.y {             // Direite e baixo
-                let x = (eqs["eq1"]! - eqPoint.b) / eqPoint.a
-                if p.x < x {
-                    return false
-                } else {
-                    return true
-                }
-            } else if p.x < quinas["p4"]!.x && p.y > quinas["p4"]!.y {      // Esquerda e cima
-                let y = eqPoint.a * eqs["eq1"]! + eqPoint.b
-                if p.y < y {
-                    return false
-                } else {
-                    return true
-                }
-            } else {                                                        // Diagonal
-                
-            }
-        default:
-            break
-        }
-        
-        return false
-        
     }
+    
     
     func dist(p: Ponto) -> Double {
         let diffX = self.pc.x - p.x
@@ -1246,16 +1144,14 @@ struct Retangulo: Forma {
         let sumSqr = diffX * diffX + diffY * diffY
         return sqrt(sumSqr)
     }
-}
-
-func eq(_ p1: Ponto, _ p2: Ponto) -> (a: Double, b: Double){
-    let ha = (p1.y - p2.y) / (p1.x - p2.x)
-    let hb = p1.y - (ha * p1.x)
     
-    return (ha, hb)
+    mutating func mover(x: Double, y: Double) {
+        self.pc.x += x
+        self.pc.y += y
+    }
+    
 }
-
-
+*/
 
 // ----------------------------------------------------------------------------------------------------------------------
 // ------------------------------------------- STRUCT POKEMON -----------------------------------------------------------
