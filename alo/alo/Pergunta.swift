@@ -13,6 +13,7 @@ public class Pergunta {
     let pergunta: String
     let resposta: String
     let hint:     String
+    let tentativas = 3
     
     init(pergunta: String, resposta: String, hint: String) {
         self.pergunta = pergunta
