@@ -22,8 +22,8 @@
                     </view>
                     <connections>
                         <outlet property="btn" destination="iyZ-ip-wq5" id="Q6s-yf-uXb"/>
-                        <outlet property="firstScene" destination="XPy-Y7-SW9" id="G9g-Ug-ubx"/>
-                        <outlet property="firstSceneTable" destination="TV2-dS-Z1N" id="80N-8q-gDS"/>
+                        <outlet property="scene" destination="XPy-Y7-SW9" id="8Xk-K5-yf6"/>
+                        <outlet property="table" destination="TV2-dS-Z1N" id="Ciz-kK-7hs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -12,8 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 
     @IBOutlet weak var btn: UIButton!
-    @IBOutlet var firstScene: UIView!
-    @IBOutlet weak var firstSceneTable: UITableView!
+    @IBOutlet var scene: UIView!
+    @IBOutlet weak var table: UITableView!
     
     let lines = [
         "firstScene": [
@@ -34,11 +34,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let tableViewFooter = UIView()
     
         
-        firstSceneTable.tableFooterView = tableViewFooter
-        firstSceneTable.dataSource = self
-        firstSceneTable.delegate = self
-        firstSceneTable.register(UITableViewCell.self, forCellReuseIdentifier: "firstSceneCell")
-        view.addSubview(firstScene)
+        table.tableFooterView = tableViewFooter
+        table.dataSource = self
+        table.delegate = self
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "firstSceneCell")
+        view.addSubview(scene)
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.firstSceneTable {
+        if tableView == self.table {
 //            return self.lines["firstScene"]!.count
             return self.teste.count
         } else {
@@ -75,30 +75,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     @IBAction func tap(_ sender: Any) {
-        if i < lines["firstScene"]!.count {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.teste.append(self.lines["firstScene"]![self.i])
-                self.firstSceneTable.beginUpdates()
-                self.firstSceneTable.insertRows(at: [IndexPath(row: self.teste.count - 1, section: 0)], with: .top)
-                self.firstSceneTable.scrollToRow(at: IndexPath(row: self.teste.count - 1, section: 0), at: .bottom, animated: true)
-
-                self.firstSceneTable.endUpdates()
-                self.i += 1
-            }
+        var index = 0
+        while i < lines["firstScene"]!.count {
             
-        } else {
-
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(self.i)) {
+                
+                self.teste.append(self.lines["firstScene"]![index])
+                self.table.beginUpdates()
+                self.table.insertRows(at: [IndexPath(row: self.teste.count - 1, section: 0)], with: .automatic)
+                self.table.endUpdates()
+                index += 1
+            }
+            self.i += 1
+            
         }
-//        while i < lines["firstScene"]!.count {
-//            self.teste.append(lines["firstScene"]![i])
-//            self.firstSceneTable.beginUpdates()
-//            self.firstSceneTable.insertRows(at: [IndexPath(row: self.teste.count - 1, section: 0)], with: .automatic)
-////            self.firstSceneTable.scrollToRow(at: IndexPath(row: self.teste.count - 1, section: 0), at: .bottom, animated: true)
-//
-//            self.firstSceneTable.endUpdates()
-//        }
         
     }
+    
     
 }
 
