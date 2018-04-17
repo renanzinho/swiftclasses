@@ -24,10 +24,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             "Mas isso não as tornam menos reais"
         ]
     ]
+    
     var teste = [String]()
+//    var teste =
     var i = 0
     
-    @IBOutlet weak var alo: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -51,43 +52,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.table {
-//            return self.lines["firstScene"]!.count
-            return self.teste.count
-        } else {
-            return 1
-        }
+        
+        return self.teste.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if tableView == self.firstSceneTable {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "firstSceneCell", for: indexPath)
-//        cell.textLabel?.text = self.lines["firstScene"]![indexPath.row]
         cell.textLabel?.text = self.teste[indexPath.row]
         
         return cell
-//        } else {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "firstSceneCell", for: indexPath)
-//            return cell
-//        }
-        
-//        return nil
+
     }
 
-    @IBAction func tap(_ sender: Any) {
+    func attText(newScene: String) {
+        
+        teste = []
+        
         var index = 0
         while i < lines["firstScene"]!.count {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(self.i)) {
-                
                 self.teste.append(self.lines["firstScene"]![index])
                 self.table.beginUpdates()
                 self.table.insertRows(at: [IndexPath(row: self.teste.count - 1, section: 0)], with: .automatic)
                 self.table.endUpdates()
                 index += 1
             }
-            self.i += 1
             
+            self.i += 1
         }
         
     }
