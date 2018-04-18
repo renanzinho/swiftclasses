@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		783F69C42084CB7C0009912C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F69C32084CB7C0009912C /* AppDelegate.swift */; };
-		783F69C62084CB7C0009912C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F69C52084CB7C0009912C /* ViewController.swift */; };
-		783F69C92084CB7C0009912C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F69C72084CB7C0009912C /* Main.storyboard */; };
-		783F69CB2084CB810009912C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783F69CA2084CB810009912C /* Assets.xcassets */; };
-		783F69CE2084CB810009912C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F69CC2084CB810009912C /* LaunchScreen.storyboard */; };
+		78E5483D208689020058D50C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5483C208689020058D50C /* AppDelegate.swift */; };
+		78E5483F208689020058D50C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5483E208689020058D50C /* ViewController.swift */; };
+		78E54842208689020058D50C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E54840208689020058D50C /* Main.storyboard */; };
+		78E54844208689080058D50C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78E54843208689080058D50C /* Assets.xcassets */; };
+		78E54847208689080058D50C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E54845208689080058D50C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		783F69C02084CB7C0009912C /* Prototipo Fuziona Pufavo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prototipo Fuziona Pufavo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		783F69C32084CB7C0009912C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		783F69C52084CB7C0009912C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		783F69C82084CB7C0009912C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		783F69CA2084CB810009912C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		783F69CD2084CB810009912C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		783F69CF2084CB810009912C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78E54839208689020058D50C /* prototipoExplodingCats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prototipoExplodingCats.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78E5483C208689020058D50C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		78E5483E208689020058D50C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78E54841208689020058D50C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78E54843208689080058D50C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78E54846208689080058D50C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		78E54848208689080058D50C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		783F69BD2084CB7C0009912C /* Frameworks */ = {
+		78E54836208689020058D50C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,71 +35,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		783F69B72084CB7C0009912C = {
+		78E54830208689020058D50C = {
 			isa = PBXGroup;
 			children = (
-				783F69C22084CB7C0009912C /* Prototipo Fuziona Pufavo */,
-				783F69C12084CB7C0009912C /* Products */,
+				78E5483B208689020058D50C /* prototipoExplodingCats */,
+				78E5483A208689020058D50C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		783F69C12084CB7C0009912C /* Products */ = {
+		78E5483A208689020058D50C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				783F69C02084CB7C0009912C /* Prototipo Fuziona Pufavo.app */,
+				78E54839208689020058D50C /* prototipoExplodingCats.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		783F69C22084CB7C0009912C /* Prototipo Fuziona Pufavo */ = {
+		78E5483B208689020058D50C /* prototipoExplodingCats */ = {
 			isa = PBXGroup;
 			children = (
-				783F69C32084CB7C0009912C /* AppDelegate.swift */,
-				783F69C52084CB7C0009912C /* ViewController.swift */,
-				783F69C72084CB7C0009912C /* Main.storyboard */,
-				783F69CA2084CB810009912C /* Assets.xcassets */,
-				783F69CC2084CB810009912C /* LaunchScreen.storyboard */,
-				783F69CF2084CB810009912C /* Info.plist */,
+				78E5483C208689020058D50C /* AppDelegate.swift */,
+				78E5483E208689020058D50C /* ViewController.swift */,
+				78E54840208689020058D50C /* Main.storyboard */,
+				78E54843208689080058D50C /* Assets.xcassets */,
+				78E54845208689080058D50C /* LaunchScreen.storyboard */,
+				78E54848208689080058D50C /* Info.plist */,
 			);
-			path = "Prototipo Fuziona Pufavo";
+			path = prototipoExplodingCats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		783F69BF2084CB7C0009912C /* Prototipo Fuziona Pufavo */ = {
+		78E54838208689020058D50C /* prototipoExplodingCats */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 783F69D22084CB810009912C /* Build configuration list for PBXNativeTarget "Prototipo Fuziona Pufavo" */;
+			buildConfigurationList = 78E5484B208689080058D50C /* Build configuration list for PBXNativeTarget "prototipoExplodingCats" */;
 			buildPhases = (
-				783F69BC2084CB7C0009912C /* Sources */,
-				783F69BD2084CB7C0009912C /* Frameworks */,
-				783F69BE2084CB7C0009912C /* Resources */,
+				78E54835208689020058D50C /* Sources */,
+				78E54836208689020058D50C /* Frameworks */,
+				78E54837208689020058D50C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Prototipo Fuziona Pufavo";
-			productName = "Prototipo Fuziona Pufavo";
-			productReference = 783F69C02084CB7C0009912C /* Prototipo Fuziona Pufavo.app */;
+			name = prototipoExplodingCats;
+			productName = prototipoExplodingCats;
+			productReference = 78E54839208689020058D50C /* prototipoExplodingCats.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		783F69B82084CB7C0009912C /* Project object */ = {
+		78E54831208689020058D50C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Renan Freitas";
 				TargetAttributes = {
-					783F69BF2084CB7C0009912C = {
+					78E54838208689020058D50C = {
 						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
-			buildConfigurationList = 783F69BB2084CB7C0009912C /* Build configuration list for PBXProject "Prototipo Fuziona Pufavo" */;
+			buildConfigurationList = 78E54834208689020058D50C /* Build configuration list for PBXProject "prototipoExplodingCats" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -107,54 +107,54 @@
 				en,
 				Base,
 			);
-			mainGroup = 783F69B72084CB7C0009912C;
-			productRefGroup = 783F69C12084CB7C0009912C /* Products */;
+			mainGroup = 78E54830208689020058D50C;
+			productRefGroup = 78E5483A208689020058D50C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				783F69BF2084CB7C0009912C /* Prototipo Fuziona Pufavo */,
+				78E54838208689020058D50C /* prototipoExplodingCats */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		783F69BE2084CB7C0009912C /* Resources */ = {
+		78E54837208689020058D50C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783F69CE2084CB810009912C /* LaunchScreen.storyboard in Resources */,
-				783F69CB2084CB810009912C /* Assets.xcassets in Resources */,
-				783F69C92084CB7C0009912C /* Main.storyboard in Resources */,
+				78E54847208689080058D50C /* LaunchScreen.storyboard in Resources */,
+				78E54844208689080058D50C /* Assets.xcassets in Resources */,
+				78E54842208689020058D50C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		783F69BC2084CB7C0009912C /* Sources */ = {
+		78E54835208689020058D50C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783F69C62084CB7C0009912C /* ViewController.swift in Sources */,
-				783F69C42084CB7C0009912C /* AppDelegate.swift in Sources */,
+				78E5483F208689020058D50C /* ViewController.swift in Sources */,
+				78E5483D208689020058D50C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		783F69C72084CB7C0009912C /* Main.storyboard */ = {
+		78E54840208689020058D50C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				783F69C82084CB7C0009912C /* Base */,
+				78E54841208689020058D50C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		783F69CC2084CB810009912C /* LaunchScreen.storyboard */ = {
+		78E54845208689080058D50C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				783F69CD2084CB810009912C /* Base */,
+				78E54846208689080058D50C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		783F69D02084CB810009912C /* Debug */ = {
+		78E54849208689080058D50C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -222,7 +222,7 @@
 			};
 			name = Debug;
 		};
-		783F69D12084CB810009912C /* Release */ = {
+		78E5484A208689080058D50C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -276,43 +276,37 @@
 			};
 			name = Release;
 		};
-		783F69D32084CB810009912C /* Debug */ = {
+		78E5484C208689080058D50C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RK7D3V77UZ;
-				INFOPLIST_FILE = "Prototipo Fuziona Pufavo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				DEVELOPMENT_TEAM = VRTX44475L;
+				INFOPLIST_FILE = prototipoExplodingCats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = renanfreitas.prototipofuzionafpufavo;
+				PRODUCT_BUNDLE_IDENTIFIER = renanfreitas.prototipoExplodingCats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		783F69D42084CB810009912C /* Release */ = {
+		78E5484D208689080058D50C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RK7D3V77UZ;
-				INFOPLIST_FILE = "Prototipo Fuziona Pufavo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				DEVELOPMENT_TEAM = VRTX44475L;
+				INFOPLIST_FILE = prototipoExplodingCats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = renanfreitas.prototipofuzionafpufavo;
+				PRODUCT_BUNDLE_IDENTIFIER = renanfreitas.prototipoExplodingCats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,25 +315,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		783F69BB2084CB7C0009912C /* Build configuration list for PBXProject "Prototipo Fuziona Pufavo" */ = {
+		78E54834208689020058D50C /* Build configuration list for PBXProject "prototipoExplodingCats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				783F69D02084CB810009912C /* Debug */,
-				783F69D12084CB810009912C /* Release */,
+				78E54849208689080058D50C /* Debug */,
+				78E5484A208689080058D50C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		783F69D22084CB810009912C /* Build configuration list for PBXNativeTarget "Prototipo Fuziona Pufavo" */ = {
+		78E5484B208689080058D50C /* Build configuration list for PBXNativeTarget "prototipoExplodingCats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				783F69D32084CB810009912C /* Debug */,
-				783F69D42084CB810009912C /* Release */,
+				78E5484C208689080058D50C /* Debug */,
+				78E5484D208689080058D50C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 783F69B82084CB7C0009912C /* Project object */;
+	rootObject = 78E54831208689020058D50C /* Project object */;
 }

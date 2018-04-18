@@ -135,8 +135,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let options = [
         "first": [
-            
-            
+            "estudar": "Eu tenho eh que estudar. Vou virar a noite :(",
+            "jogar": "Vou so uma pra desestressar, depois estudar!!!",
+            "dormir": "Vou capotar, isso sim! To sem dormir direito esse mes todo."
         ]
     ]
     
@@ -146,7 +147,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let tableViewFooter = UIView()
-    
+        
         
         table.tableFooterView = tableViewFooter
         table.dataSource = self
@@ -156,7 +157,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         attText("start")
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -173,15 +174,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "firstSceneCell", for: indexPath)
         cell.textLabel?.text = self.teste[indexPath.row]
         cell.textLabel?.numberOfLines = 0
         
         return cell
-
+        
     }
-
+    
     func attText(_ newScene: String) {
         
         teste = []
@@ -204,10 +205,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func chooseOptions(_ newScene: string){
+    func chooseOptions(_ newScene: String){
         
     }
     
     
 }
+
 
